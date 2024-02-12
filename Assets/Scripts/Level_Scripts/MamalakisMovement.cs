@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events; // Add this line to include the UnityEngine.Events namespace
@@ -8,6 +8,7 @@ public class MamalakisMovement : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
     private float dirX;
+
     public int pz;
 
     public Animator animator;
@@ -49,14 +50,12 @@ public class MamalakisMovement : MonoBehaviour
         pz = Posi();
     }
 
-
     private void Flip123()
     {
         if (dirX < 0f)
         {
             sprite.flipX = true;
         }
-
         else if (dirX > 0f)
         {
             sprite.flipX = false;
