@@ -24,18 +24,18 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            Debug.Log("If Condition Passed");
+            
             jump = true;
-            Debug.Log("Jump set to True");
             animator.SetBool("IsJumping", true);
-            Debug.Log("Animator Called");
         }
 
-        if (Input.GetButtonDown("Crouch"))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
+            animator.SetBool("IsCrouching", true);
             crouch = true;
-        } else if (Input.GetButtonUp("Crouch"))
+        } else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
+             animator.SetBool("IsCrouching", false);
             crouch = false;
         }
 
@@ -46,6 +46,11 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("IsJumping", false);
     }
 
+   // public void OnCrouching (bool isCrouching)
+   // {
+   //     animator.SetBool("IsCrouching", isCrouching);    
+   // }
+
     void FixedUpdate ()
     {
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
@@ -53,4 +58,5 @@ public class PlayerMovement : MonoBehaviour
         
     }
 }
+
 

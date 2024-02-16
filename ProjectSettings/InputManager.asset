@@ -489,8 +489,8 @@ InputManager:
     m_Name: Crouch
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: s
+    negativeButton: up
+    positiveButton: down
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
