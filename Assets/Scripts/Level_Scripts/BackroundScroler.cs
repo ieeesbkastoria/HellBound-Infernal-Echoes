@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BackroundScroler : MonoBehaviour
 {
-    public MamalakisMovement script;
+    public CharacterController2D script;
 
     [Range( -1f,1f)]
     public float scrollSpeed;
