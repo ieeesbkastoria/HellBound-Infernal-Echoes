@@ -18,7 +18,7 @@ public class CharacterController2D : MonoBehaviour
     // New variable declaration
     public float pz = 0f;
 
-    private bool canDash = true;
+    public bool canDash = true;
     private bool isDashing;
     private float dashingPower = 10f;
     private float dashingTime = 0.2f;
@@ -165,3 +165,5 @@ public class CharacterController2D : MonoBehaviour
         canDash = true;
     }
 }
+
+

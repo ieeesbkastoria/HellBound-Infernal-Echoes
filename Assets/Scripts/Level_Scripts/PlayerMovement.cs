@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
     
     public float runSpeed = 40f;
 
-    bool canDash = true;
     bool jump = false;
     bool crouch = false;
 
@@ -19,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
             crouch = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && controller.canDash)
         {
           StartCoroutine(controller.Dash());
         }
