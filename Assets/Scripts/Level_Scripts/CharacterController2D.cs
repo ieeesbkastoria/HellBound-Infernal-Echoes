@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 
 public class CharacterController2D : MonoBehaviour
 {
@@ -11,9 +12,17 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private Transform m_GroundCheck;
     [SerializeField] private Transform m_CeilingCheck;
     [SerializeField] private Collider2D m_CrouchDisableCollider;
+    [SerializeField] private TrailRenderer tr;
+    [SerializeField] private Rigidbody2D rb;
 
     // New variable declaration
     public float pz = 0f;
+
+    private bool canDash = true;
+    private bool isDashing;
+    private float dashingPower = 10f;
+    private float dashingTime = 0.2f;
+    private float dashingCooldown = 1f;
 
     const float k_GroundedRadius = .2f;
     private bool m_Grounded;
@@ -23,8 +32,6 @@ public class CharacterController2D : MonoBehaviour
     private Vector3 m_Velocity = Vector3.zero;
 
     // Reference to the Animator component
-    
-
     [Header("Events")]
     [Space]
     public UnityEvent OnLandEvent;
@@ -41,6 +48,13 @@ public class CharacterController2D : MonoBehaviour
             OnLandEvent = new UnityEvent();
         if (OnCrouchEvent == null)
             OnCrouchEvent = new BoolEvent();
+
+        if (tr != null)
+        {
+            Color color = new Color(0.5f, 0.5f, 1f, 0.5f); // Light blue with alpha
+            tr.startColor = color;
+            tr.endColor = color;
+        }
     }
 
     private void FixedUpdate()
@@ -98,7 +112,6 @@ public class CharacterController2D : MonoBehaviour
             m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
             // Update the "Speed" parameter in the Animator
-           
             
             if (move > 0 && !m_FacingRight)
             {
@@ -135,5 +148,20 @@ public class CharacterController2D : MonoBehaviour
     {
         pz = 0f;
     }
-}
 
+    public IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+        tr.emitting = true;
+        yield return new WaitForSeconds(dashingTime);
+        tr.emitting = false;
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
+    }
+}

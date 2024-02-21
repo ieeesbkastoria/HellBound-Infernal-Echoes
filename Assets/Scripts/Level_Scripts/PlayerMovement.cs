@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     
     public float runSpeed = 40f;
 
+    bool canDash = true;
     bool jump = false;
     bool crouch = false;
 
@@ -29,14 +30,19 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsJumping", true);
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             animator.SetBool("IsCrouching", true);
             crouch = true;
-        } else if (Input.GetKeyUp(KeyCode.LeftShift))
+        } else if (Input.GetKeyUp(KeyCode.S))
         {
              animator.SetBool("IsCrouching", false);
             crouch = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        {
+          StartCoroutine(controller.Dash());
         }
 
     }
@@ -58,5 +64,3 @@ public class PlayerMovement : MonoBehaviour
         
     }
 }
-
-
