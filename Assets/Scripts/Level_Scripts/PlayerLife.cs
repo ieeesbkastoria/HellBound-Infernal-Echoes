@@ -11,19 +11,28 @@ public class PlayerLife : MonoBehaviour
 
     // Define player's health points
     public int maxHealth = 3;
-    public int  currentHealth;
+    public int currentHealth;
 
     public Slider slider;
+
+    // Adjustable knockback force
+    public float knockbackForce = 10;
+    public Gradient gradient;
+    public Image fill;
 
     public void SetMaxHealth(int health)
     {
         slider.maxValue = health;
         slider.value = health;
+
+       fill.color = gradient.Evaluate(1f);
     }
 
     public void SetHealth(int health)
     {
         slider.value = health;
+
+        fill.color = gradient.Evaluate(slider.normalizedValue);
     }
 
     void Start()
@@ -34,24 +43,30 @@ public class PlayerLife : MonoBehaviour
         SetMaxHealth(maxHealth);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) 
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Trap") || collision.gameObject.CompareTag("Enemy"))
         {
             // Deduct health points when colliding with traps or enemies
             currentHealth--;
             SetHealth(currentHealth);
+
+            // Apply knockback force
+            Vector2 knockbackDirection = (transform.position - collision.transform.position).normalized;
+            rb.velocity = Vector2.zero;
+            rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+
             if (currentHealth <= 0)
             {
                 Die();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
-        }  
+        }
 
         if (collision.gameObject.CompareTag("Win"))
         {
             logic.GameVictory();
-            Die();   
+            Die();
         }
     }
 
@@ -60,4 +75,5 @@ public class PlayerLife : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Static;
     }
 }
+
 
