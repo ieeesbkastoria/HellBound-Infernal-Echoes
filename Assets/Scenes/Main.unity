@@ -3040,17 +3040,17 @@ GameObject:
   - component: {fileID: 498814374}
   - component: {fileID: 498814378}
   - component: {fileID: 498814379}
-<<<<<<< Updated upstream
+
   m_Layer: 0
   m_Name: Mamalakis
-=======
+
   - component: {fileID: 498814380}
   - component: {fileID: 498814382}
   - component: {fileID: 498814383}
   - component: {fileID: 498814384}
   m_Layer: 3
   m_Name: Player
->>>>>>> Stashed changes
+
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3308,11 +3308,11 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< Updated upstream
+
   m_LocalPosition: {x: -2.0401058, y: 4.254917, z: -10.809999}
-=======
+
   m_LocalPosition: {x: -1.1921115, y: 3.7997174, z: -10.809999}
->>>>>>> Stashed changes
+
   m_LocalScale: {x: 1.1607325, y: 5.5728, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -32716,11 +32716,10 @@ Transform:
   m_GameObject: {fileID: 1164714030}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< Updated upstream
   m_LocalPosition: {x: -2.0401058, y: 4.254917, z: -10.809999}
-=======
+
   m_LocalPosition: {x: -1.1921115, y: 3.7997174, z: -10.809999}
->>>>>>> Stashed changes
+
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
