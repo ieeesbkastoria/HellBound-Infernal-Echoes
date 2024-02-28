@@ -7,6 +7,7 @@ public class PlayerLife : MonoBehaviour
 {
     public LogicScript logic;
     private Rigidbody2D rb;
+    private int Life;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -17,18 +18,20 @@ public class PlayerLife : MonoBehaviour
         if (collision.gameObject.CompareTag("Trap") || collision.gameObject.CompareTag("Enemy"))
         {
             Die();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }  
 
         if (collision.gameObject.CompareTag("Win"))
         {
             logic.GameVictory();
-            Die();   
+            rb.bodyType = RigidbodyType2D.Static;   
         }
     }
 
-    private void Die()
+    public void Die()
     {
         rb.bodyType = RigidbodyType2D.Static;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
 }
+
