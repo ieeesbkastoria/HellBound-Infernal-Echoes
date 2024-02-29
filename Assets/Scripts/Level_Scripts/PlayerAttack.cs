@@ -17,7 +17,7 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F)) 
         {
             anim.SetBool("Is_attacking", true);
-            Debug.Log("Is_attacking = true");
+            
             Collider2D[] damage = Physics2D.OverlapCircleAll(attackLocation.position, attackRange, enemies);
             for (int i = 0; i < damage.Length; i++)
             {
@@ -27,7 +27,7 @@ public class PlayerAttack : MonoBehaviour
         else
         {
             anim.SetBool("Is_attacking", false);
-            Debug.Log("Is_attacking = false");
+            
         }
     }
 

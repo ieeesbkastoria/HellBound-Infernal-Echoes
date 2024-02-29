@@ -47,6 +47,8 @@ public class PlayerLife : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Trap") || collision.gameObject.CompareTag("Enemy"))
         {
+            if (collision.gameObject.CompareTag("Enemy"))
+            {Debug.Log("Enemy Hit");}
             // Deduct health points when colliding with traps or enemies
             currentHealth--;
             SetHealth(currentHealth);
@@ -70,7 +72,21 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
-    private void Die()
+    public void TakeDamage()
+    {
+        currentHealth--;
+        SetHealth(currentHealth);
+
+       
+
+        if (currentHealth <= 0)
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+        
+    }
+
+    public void Die()
     {
         rb.bodyType = RigidbodyType2D.Static;
     }
