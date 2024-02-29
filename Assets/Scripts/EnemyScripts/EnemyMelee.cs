@@ -31,12 +31,12 @@ public class EnemyMelee: MonoBehaviour
     {
         if (TargetInDistance())
         {
-       
+            Debug.Log("If Condition Passed TargetInDistance = true");
             anim.SetBool("Moving", true);
         }
         else
         {
-       
+            Debug.Log("Else Passed TargetInDistance = false");
             anim.SetBool("Moving", false);
         } 
         
@@ -85,6 +85,7 @@ public class EnemyMelee: MonoBehaviour
 
      private bool TargetInDistance()
     {
+        Debug.Log("TargetInDistance Function Entered");
         return Vector2.Distance(transform.position, target.transform.position) < activateDistance;
     }
 }

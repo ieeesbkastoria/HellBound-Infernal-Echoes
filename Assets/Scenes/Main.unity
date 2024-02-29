@@ -3157,10 +3157,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackLocation: {fileID: 841719260}
-  attackRange: 0
+  attackRange: 2
   enemies:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3248,7 +3248,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0770736, y: 3.7997174, z: -10.809999}
+  m_LocalPosition: {x: -1.309308, y: 3.7997174, z: -10.809999}
   m_LocalScale: {x: 1.1607325, y: 5.5728, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -35023,7 +35023,7 @@ GameObject:
   - component: {fileID: 1109557876}
   - component: {fileID: 1109557875}
   - component: {fileID: 1109557874}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -35409,7 +35409,7 @@ Transform:
   m_GameObject: {fileID: 1164714030}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0770736, y: 3.7997174, z: -10.809999}
+  m_LocalPosition: {x: -1.309308, y: 3.7997174, z: -10.809999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -35814,7 +35814,7 @@ GameObject:
   - component: {fileID: 1264349834}
   - component: {fileID: 1264349833}
   - component: {fileID: 1264349832}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EnemyGFX
   m_TagString: Enemy
   m_Icon: {fileID: 0}
