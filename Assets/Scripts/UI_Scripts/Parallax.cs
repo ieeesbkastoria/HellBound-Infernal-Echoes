@@ -12,7 +12,7 @@ public class Parallax : MonoBehaviour{
     void Start(){
         mainCamera = gameObject.GetComponent<Camera>();
         screenBounds = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, mainCamera.transform.position.z));
-        foreach(GameObject obj in levels){
+       foreach(GameObject obj in levels){
             loadChildObjects(obj);
         }
     }
@@ -58,4 +58,5 @@ public class Parallax : MonoBehaviour{
         }
     }
 }
+
 
