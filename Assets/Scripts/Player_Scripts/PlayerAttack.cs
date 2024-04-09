@@ -6,10 +6,12 @@ public class PlayerAttack : MonoBehaviour
     public Transform attackLocation;
     public float attackRange;
     public LayerMask enemies;
+    public int damageAmount;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
+        damageAmount = 1;
     }
 
     void Update()
@@ -17,20 +19,24 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F)) 
         {
             anim.SetBool("Is_attacking", true);
-            
-            Collider2D[] damage = Physics2D.OverlapCircleAll(attackLocation.position, attackRange, enemies);
-            for (int i = 0; i < damage.Length; i++)
+        
+            Collider2D[] damageColliders = Physics2D.OverlapCircleAll(attackLocation.position, attackRange, enemies);
+            foreach (Collider2D collider in damageColliders)
             {
-                Destroy(damage[i].gameObject);
-                Debug.Log("Damage Dealt");
+                EnemyLogic enemyLogic = collider.GetComponent<EnemyLogic>();
+                if (enemyLogic != null)
+                {
+                    enemyLogic.TakeDamage(damageAmount);
+                    Debug.Log("Damage Dealt");
+                }
             }
         }
         else
         {
             anim.SetBool("Is_attacking", false);
-            
         }
-    }
+}
+
 
     private void OnDrawGizmosSelected()
     {
