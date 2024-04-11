@@ -202,7 +202,7 @@ TextureImporter:
         width: 94
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -210,6 +210,153 @@ TextureImporter:
       bones: []
       spriteID: 3c29d10ea55c7fa44a5f746ab397b7c8
       internalID: 1590370722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_5
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 33
+        width: 45
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fc837e75aacb244db896c6ba3b667a2
+      internalID: -1491450667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_6
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 32
+        width: 20
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 152e012b0a70bff4fa2e409197c032b7
+      internalID: 165135303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_7
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 34
+        width: 20
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8df19226ee216244eb7cc27cee108bfe
+      internalID: 1156947918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_8
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 34
+        width: 20
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3ec5a56e13d1c647962415a55e9afa1
+      internalID: 623484937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 84
+        width: 80
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47b9e7b74b81dc649a549ef8f13543ae
+      internalID: -2017505542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 51
+        width: 80
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adbfea54801817246a344c8710815796
+      internalID: -1930337947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 17_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 80
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 861c090e037e50a43993ad473442dbcb
+      internalID: -1224584756
       vertices: []
       indices: 
       edges: []
@@ -227,9 +374,16 @@ TextureImporter:
     nameFileIdTable:
       17_0: -784422779
       17_1: 2073693847
+      17_10: -1930337947
+      17_11: -1224584756
       17_2: 252087718
       17_3: 127768736
       17_4: 1590370722
+      17_5: -1491450667
+      17_6: 165135303
+      17_7: 1156947918
+      17_8: 623484937
+      17_9: -2017505542
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

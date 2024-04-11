@@ -4,6 +4,7 @@ public class EnemyLogic : MonoBehaviour
 {
     public int startingHealth = 100; // Starting health of the enemy
     private int currentHealth; // Current health of the enemy
+    public int EnemyDeaths = 0;
 
     public int currencyOnKill = 10; // Amount of currency to give to the player when this enemy is killed
 
@@ -15,6 +16,7 @@ public class EnemyLogic : MonoBehaviour
     private void Die()
     {
         // Add currency to the player
+        EnemyDeaths++;
         PlayerCurrency.instance.AddCurrency(currencyOnKill);
 
         // Destroy this enemy GameObject
