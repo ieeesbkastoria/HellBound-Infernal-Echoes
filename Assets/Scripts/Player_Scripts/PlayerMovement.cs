@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
  
     public CharacterController2D controller;
+    public PlayerEndurance playerEndurance;
     public Animator animator;
     
     public float runSpeed = 40f;
@@ -27,7 +28,10 @@ public class PlayerMovement : MonoBehaviour
         {
            
             jump = true;
+            playerEndurance.Is_Performing_Action = true;
+            playerEndurance.DecreaseEndurance(2);
             animator.SetBool("IsJumping", true);
+            playerEndurance.Is_Performing_Action = false;
         }
 
         if (Input.GetKeyDown(KeyCode.S))
@@ -41,8 +45,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && controller.canDash)
-        {
+        {  
+          playerEndurance.Is_Performing_Action = true;
+          playerEndurance.DecreaseEndurance(3);
           StartCoroutine(controller.Dash());
+          playerEndurance.Is_Performing_Action = false;
         }
 
     }
@@ -52,10 +59,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("IsJumping", false);
     }
 
-   // public void OnCrouching (bool isCrouching)
-   // {
-   //     animator.SetBool("IsCrouching", isCrouching);    
-   // }
+
 
     void FixedUpdate ()
     {

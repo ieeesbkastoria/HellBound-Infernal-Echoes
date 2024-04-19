@@ -4,17 +4,26 @@ using UnityEngine.UI;
 public class LevelUpMenu : MonoBehaviour
 {
     public Text vitalityText;
+    public Text dexterityText;
+    public Text accuracyText;
     public Text strengthText;
     public Text enduranceText;
     public Text agilityText;
     public Text errorText;
+    public PlayerAttack playerAttack;
     public PlayerCurrency playerCurrency; // Reference to PlayerCurrency script
+    public PlayerLife playerLife;
+    public PlayerEndurance playerEndurance;
     private int upgradeCost = 1; // Initial cost for upgrading a stat
 
     private int vitalityLevel = 1;
+    private int dexterityLevel = 1;
+    private int accuracyLevel = 1;
     private int strengthLevel = 1;
     private int enduranceLevel = 1;
     private int agilityLevel = 1;
+
+   
 
     void Start()
     {
@@ -23,6 +32,8 @@ public class LevelUpMenu : MonoBehaviour
 
     void UpdateUI()
     {
+        accuracyText.text = "Accuracy: " + accuracyLevel;
+        dexterityText.text = "Dexterity: " + dexterityLevel;
         vitalityText.text = "Vitality: " + vitalityLevel;
         strengthText.text = "Strength: " + strengthLevel;
         enduranceText.text = "Endurance: " + enduranceLevel;
@@ -43,6 +54,45 @@ public class LevelUpMenu : MonoBehaviour
             playerCurrency.AddCurrency(-upgradeCost);
             vitalityLevel++;
             upgradeCost++;
+            playerLife.maxHealth = playerLife.maxHealth + 2;
+            UpdateUI();
+            ResetErrorText();
+        }
+        else
+        {
+            errorText.text = "Insufficient funds";
+        }
+    }
+
+      public void IncreaseAccuracy()
+    {
+        if (playerCurrency.GetCurrency() >= upgradeCost)
+        {
+            playerCurrency.AddCurrency(-upgradeCost);
+            accuracyLevel++;
+            upgradeCost++;
+            playerAttack.baseAttackRange = playerAttack.baseAttackRange + 0.5f;
+            float newAttackRange = playerAttack.baseAttackRange;
+            playerAttack.SetAttackRange(newAttackRange);
+            UpdateUI();
+            ResetErrorText();
+        }
+        else
+        {
+            errorText.text = "Insufficient funds";
+        }
+    }
+
+      public void IncreaseDexterity()
+    {
+        if (playerCurrency.GetCurrency() >= upgradeCost)
+        {
+            playerCurrency.AddCurrency(-upgradeCost);
+            dexterityLevel++;
+            upgradeCost++;
+            playerAttack.baseAttackCooldown = playerAttack.baseAttackCooldown - 0.1f;
+            float newAttackCooldown = playerAttack.baseAttackCooldown;
+            playerAttack.SetAttackSpeed(newAttackCooldown);
             UpdateUI();
             ResetErrorText();
         }
@@ -60,6 +110,9 @@ public class LevelUpMenu : MonoBehaviour
             playerCurrency.AddCurrency(-upgradeCost);
             strengthLevel++;
             upgradeCost++;
+            playerAttack.baseDamageAmount = playerAttack.baseDamageAmount + 1;
+            int newDamageAmount = playerAttack.baseDamageAmount;
+            playerAttack.SetAttackDamage(newDamageAmount);
             UpdateUI();
             ResetErrorText();
         }
@@ -77,6 +130,7 @@ public class LevelUpMenu : MonoBehaviour
             playerCurrency.AddCurrency(-upgradeCost);
             enduranceLevel++;
             upgradeCost++;
+            playerEndurance.maxEndurance = playerEndurance.maxEndurance + 2;
             UpdateUI();
             ResetErrorText();
         }

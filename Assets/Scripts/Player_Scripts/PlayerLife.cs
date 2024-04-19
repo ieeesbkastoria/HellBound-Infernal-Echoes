@@ -9,13 +9,11 @@ public class PlayerLife : MonoBehaviour
     public LogicScript logic;
     private Rigidbody2D rb;
 
-    // Define player's health points
     public int maxHealth = 3;
     public int currentHealth;
 
     public Slider slider;
 
-    // Adjustable knockback force
     public float knockbackForce = 10;
     public Gradient gradient;
     public Image fill;
