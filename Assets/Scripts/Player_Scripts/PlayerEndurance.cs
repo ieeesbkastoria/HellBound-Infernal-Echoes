@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerEndurance : MonoBehaviour
 {
     public Slider slider; // Reference to the UI slider for the endurance bar
-    public float maxEndurance = 10f; // Maximum endurance value
+    public float maxEndurance = 100f; // Maximum endurance value
     public float currentEndurance; // Current endurance value
     public bool Is_Performing_Action = false;
 

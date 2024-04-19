@@ -22,7 +22,7 @@ public class CharacterController2D : MonoBehaviour
     private bool isDashing;
     private float dashingPower = 10f;
     private float dashingTime = 0.2f;
-    private float dashingCooldown = 1f;
+    public float dashingCooldown = 1f;
 
     const float k_GroundedRadius = .2f;
     private bool m_Grounded;

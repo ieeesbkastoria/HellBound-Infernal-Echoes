@@ -14,6 +14,7 @@ public class LevelUpMenu : MonoBehaviour
     public PlayerCurrency playerCurrency; // Reference to PlayerCurrency script
     public PlayerLife playerLife;
     public PlayerEndurance playerEndurance;
+    public CharacterController2D characterController2D;
     private int upgradeCost = 1; // Initial cost for upgrading a stat
 
     private int vitalityLevel = 1;
@@ -148,6 +149,7 @@ public class LevelUpMenu : MonoBehaviour
             playerCurrency.AddCurrency(-upgradeCost);
             agilityLevel++;
             upgradeCost++;
+            characterController2D.dashingCooldown = characterController2D.dashingCooldown - 0.1f;
             UpdateUI();
             ResetErrorText();
         }
