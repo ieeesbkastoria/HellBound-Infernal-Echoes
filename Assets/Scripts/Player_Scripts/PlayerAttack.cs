@@ -35,11 +35,14 @@ public class PlayerAttack : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F))
             {  
-                playerEndurance.Is_Performing_Action = true;
-                playerEndurance.DecreaseEndurance(1);
-                Attack();  
-                playerEndurance.Is_Performing_Action = false;
-                nextAttackTime = Time.time + attackCooldown;
+                if (playerEndurance.CheckEndurance(1))
+                {
+                    playerEndurance.Is_Performing_Action = true;
+                    playerEndurance.DecreaseEndurance(1);
+                    Attack();  
+                    playerEndurance.Is_Performing_Action = false;
+                    nextAttackTime = Time.time + attackCooldown;
+                }
             }
         }
     }

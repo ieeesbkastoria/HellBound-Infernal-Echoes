@@ -59,4 +59,16 @@ public class PlayerEndurance : MonoBehaviour
     {
         slider.value = currentEndurance; // Update slider value (0 to 1)
     }
+
+    public bool CheckEndurance(int EnduranceAmount)
+    {
+        if (currentEndurance >= EnduranceAmount)
+        {
+            return true;
+        }
+        else
+        {
+           return false;
+        }
+    }
 }
