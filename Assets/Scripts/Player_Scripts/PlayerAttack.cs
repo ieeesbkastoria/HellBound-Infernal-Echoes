@@ -50,6 +50,7 @@ public class PlayerAttack : MonoBehaviour
     void Attack()
     {
         anim.SetBool("Is_attacking", true);
+        Debug.Log("Is_attacking set to true");
 
         Collider2D[] damageColliders = Physics2D.OverlapCircleAll(attackLocation.position, attackRange, enemies);
         foreach (Collider2D collider in damageColliders)
@@ -62,6 +63,7 @@ public class PlayerAttack : MonoBehaviour
             }
         }
         anim.SetBool("Is_attacking", false);
+         Debug.Log("Is_attacking set to false");
     }
 
     private void OnDrawGizmosSelected()

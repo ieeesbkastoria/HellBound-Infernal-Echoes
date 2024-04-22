@@ -9,6 +9,7 @@ public class LevelUpMenu : MonoBehaviour
     public Text strengthText;
     public Text enduranceText;
     public Text agilityText;
+    public Text luckText; 
     public Text errorText;
     public PlayerAttack playerAttack;
     public PlayerCurrency playerCurrency; // Reference to PlayerCurrency script
@@ -23,6 +24,7 @@ public class LevelUpMenu : MonoBehaviour
     private int strengthLevel = 1;
     private int enduranceLevel = 1;
     private int agilityLevel = 1;
+    private int LuckLevel = 1;
 
    
 
@@ -39,6 +41,8 @@ public class LevelUpMenu : MonoBehaviour
         strengthText.text = "Strength: " + strengthLevel;
         enduranceText.text = "Endurance: " + enduranceLevel;
         agilityText.text = "Agility: " + agilityLevel;
+        luckText.text = "Luck: " + LuckLevel;
+
     }
 
     // Method to reset the error message text
@@ -132,6 +136,23 @@ public class LevelUpMenu : MonoBehaviour
             enduranceLevel++;
             upgradeCost++;
             playerEndurance.maxEndurance = playerEndurance.maxEndurance + 2;
+            UpdateUI();
+            ResetErrorText();
+        }
+        else
+        {
+            errorText.text = "Insufficient funds";
+        }
+    }
+
+     public void IncreaseLuck()
+    {
+        if (playerCurrency.GetCurrency() >= upgradeCost)
+        {
+            playerCurrency.AddCurrency(-upgradeCost);
+            LuckLevel++;
+            upgradeCost++;
+            playerCurrency.LuckChance = playerCurrency.LuckChance + 0.05f;
             UpdateUI();
             ResetErrorText();
         }

@@ -7,6 +7,7 @@ public class PlayerCurrency : MonoBehaviour
 
     private int playerCurrency = 0; // Player's currency
     public Text currencyText; // Reference to the UI Text element for displaying currency
+    public float LuckChance = 0.1f;
 
     private void Awake()
     {
@@ -33,9 +34,20 @@ public class PlayerCurrency : MonoBehaviour
     // Method to add currency to the player
     public void AddCurrency(int amount)
     {
-        playerCurrency += amount;
+        // There's a 10% chance of dropping an extra 30% currency
+        if (Random.value < LuckChance)
+        {
+            int extraCurrency = Mathf.RoundToInt(amount * 0.3f);
+            playerCurrency += amount + extraCurrency;
+            Debug.Log("Added " + amount + " currency (+ " + extraCurrency + " extra). Total: " + playerCurrency);
+        }
+        else
+        {
+            playerCurrency += amount;
+            Debug.Log("Added " + amount + " currency. Total: " + playerCurrency);
+        }
+
         UpdateCurrencyText();
-        Debug.Log("Added " + amount + " currency. Total: " + playerCurrency);
     }
 
     // Method to retrieve the player's current currency
@@ -53,4 +65,5 @@ public class PlayerCurrency : MonoBehaviour
         }
     }
 }
+
 
