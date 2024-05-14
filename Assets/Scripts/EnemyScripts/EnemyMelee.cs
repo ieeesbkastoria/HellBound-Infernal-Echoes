@@ -1,5 +1,8 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using Pathfinding;
 
 public class EnemyMelee: MonoBehaviour
 {
@@ -22,13 +25,27 @@ public class EnemyMelee: MonoBehaviour
     public PlayerLife  playerHealth;
     public Transform target;
     public float activateDistance = 50f;
+    public AIPath aiPath;
+    public EnemyAi Enemyai;
+    private SpriteRenderer sprite;
+    [SerializeField] private float NewVector;
     private void Awake()
     {
         anim = GetComponent<Animator>();
     }
 
     private void Update()
-    {
+    {   
+        // DO SPRITE FLIPING
+        /*if(aiPath.desiredVelocity.x >= 0.01f)
+        {
+            transform.localScale = new Vector3(NewVector, NewVector, 1f);
+        }
+        else if (aiPath.desiredVelocity.x <= -0.01f)
+        {
+            transform.localScale = new Vector3(-NewVector, NewVector, 1f);
+        }*/
+
         if (TargetInDistance())
         {
             Debug.Log("If Condition Passed TargetInDistance = true");
@@ -52,6 +69,11 @@ public class EnemyMelee: MonoBehaviour
                 cooldownTimer = 0;
                 anim.SetTrigger("MeleeAttack");
             }
+        }
+
+        if (Enemyai.isJumping)
+        {
+            anim.SetTrigger("Jump");
         }
 
     }
@@ -79,7 +101,7 @@ public class EnemyMelee: MonoBehaviour
     {
         if (PlayerInSight())
         {
-            playerHealth.TakeDamage();  
+            playerHealth.TakeDamage(damage);  
         } 
     }
 

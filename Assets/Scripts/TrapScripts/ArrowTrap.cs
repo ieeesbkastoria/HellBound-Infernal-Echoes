@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ArrowTrap : MonoBehaviour
@@ -6,14 +7,17 @@ public class ArrowTrap : MonoBehaviour
     [SerializeField] private Transform ArrowPoint;
     [SerializeField] private GameObject[] Arrows;
     private float CooldownTimer;
+    private Animator anim;
+
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     private void Attack()
     {
-        CooldownTimer = 0;
-
         Arrows[FindArrow()].transform.position = ArrowPoint.position;
-        Arrows[FindArrow()].GetComponent<EnemyProjectile>().ActivateProjectile();
-
+        Arrows[FindArrow()].GetComponent<EnemyProjectile2>().ActivateProjectile();   
     }
 
     private int FindArrow()
@@ -31,6 +35,9 @@ public class ArrowTrap : MonoBehaviour
         CooldownTimer += Time.deltaTime;
 
         if (CooldownTimer >= AttackCooldown)
-        Attack();
+        {
+            CooldownTimer = 0;
+            anim.SetTrigger("Fire");
+        }
     }
 }

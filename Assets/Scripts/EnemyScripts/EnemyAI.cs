@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-public class EnemyAI : MonoBehaviour
+public class EnemyAi : MonoBehaviour
 {
     [Header("Pathfinding")]
     public Transform target;
@@ -16,6 +16,8 @@ public class EnemyAI : MonoBehaviour
     public float jumpNodeHeightRequirement = 0.8f;
     public float jumpModifier = 0.3f;
     public float jumpCheckOffset = 0.1f;
+    public float jumpcooldown = 1f;
+    public float movecooldown = 0f;
 
     [Header("Custom Behavior")]
     public bool followEnabled = true;
@@ -78,10 +80,9 @@ public class EnemyAI : MonoBehaviour
         // Direction Calculation
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = direction * speed;
-
         // Jump
         if (jumpEnabled && isGrounded && !isInAir && !isOnCoolDown)
-        {
+        {Debug.Log("ohhhh!!!");
             if (direction.y > jumpNodeHeightRequirement)
             {
                 if (isInAir) return; 
@@ -103,7 +104,8 @@ public class EnemyAI : MonoBehaviour
 
         // Movement
         rb.velocity = new Vector2(force.x, rb.velocity.y);
-
+        StartCoroutine(MoveCoolDown());
+        
         // Next Waypoint
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
         if (distance < nextWaypointDistance)
@@ -114,11 +116,11 @@ public class EnemyAI : MonoBehaviour
         // Direction Graphics Handling
         if (directionLookEnabled)
         {
-            if (rb.velocity.x > 0.05f)
+            if (rb.velocity.x < 0.05f)
             {
                 transform.localScale = new Vector3(-1f * Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
-            else if (rb.velocity.x < -0.05f)
+            else if (rb.velocity.x > -0.05f)
             {
                 transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
@@ -142,7 +144,17 @@ public class EnemyAI : MonoBehaviour
     IEnumerator JumpCoolDown()
     {
         isOnCoolDown = true; 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(jumpcooldown);
         isOnCoolDown = false;
     }
+
+    IEnumerator MoveCoolDown()
+    {
+        yield return new WaitForSeconds(movecooldown);
+    }
+
+    /*void Cooldown()
+    {
+        StartCoroutine(MoveCoolDown());
+    }*/
 }

@@ -6,9 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
+    Vector2 CheckPointPosition;
     public LogicScript logic;
     private Rigidbody2D rb;
 
+    // Define player's health points
+    public int healings = 3;
     public int maxHealth = 3;
     public int currentHealth;
 
@@ -32,13 +35,24 @@ public class PlayerLife : MonoBehaviour
 
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
+   
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     void Start()
     {
+        CheckPointPosition = transform.position;
         rb = GetComponent<Rigidbody2D>();
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
         currentHealth = maxHealth;
         SetMaxHealth(maxHealth);
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.E)) Healing();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -70,7 +84,7 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
-    public void TakeDamage()
+    public void TakeDamage(int damage)
     {
         currentHealth--;
         SetHealth(currentHealth);
@@ -84,10 +98,49 @@ public class PlayerLife : MonoBehaviour
         
     }
 
+       public void Healing()
+    {
+            if(healings <= 3 && healings > 0)
+        {
+            if(currentHealth > 0 && currentHealth != 3)
+            {
+                Debug.Log("Healed");
+                healings--;
+                currentHealth++;
+                SetHealth(currentHealth);
+            }  
+        }
+    } 
+
+     IEnumerator Respawn(float duration)
+    {
+        rb.velocity = new Vector2(0, 0);
+        transform.localScale = new Vector3(0, 0, 0);
+
+        yield return new WaitForSeconds(duration);
+        transform.position = CheckPointPosition;
+
+        //Health
+        currentHealth = maxHealth;
+        SetMaxHealth(maxHealth);
+
+        transform.localScale = new Vector3(10, 10, 2);
+        rb.bodyType = RigidbodyType2D.Dynamic;
+    }
+
+    public void UpdateCheckpoint(Vector2 pos)
+    {
+        CheckPointPosition = pos;
+
+    }
+ 
+
     public void Die()
     {
         rb.bodyType = RigidbodyType2D.Static;
+        StartCoroutine(Respawn(0.5f));
     }
+    
 }
 
 
