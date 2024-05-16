@@ -22,7 +22,7 @@ public class PlayerCurrency : MonoBehaviour
         }
 
         // Make sure the GameManager persists between scenes
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
