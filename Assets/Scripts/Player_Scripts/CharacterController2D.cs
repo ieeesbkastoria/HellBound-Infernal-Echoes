@@ -25,7 +25,7 @@ public class CharacterController2D : MonoBehaviour
     public float dashingCooldown = 1f;
 
     const float k_GroundedRadius = .2f;
-    private bool m_Grounded;
+    public bool m_Grounded;
     const float k_CeilingRadius = .2f;
     private Rigidbody2D m_Rigidbody2D;
     private bool m_FacingRight = true;
@@ -59,12 +59,14 @@ public class CharacterController2D : MonoBehaviour
 
     private void FixedUpdate()
     {
+        
         bool wasGrounded = m_Grounded;
         m_Grounded = false;
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
         for (int i = 0; i < colliders.Length; i++)
         {
+            
             if (colliders[i].gameObject != gameObject)
             {
                 m_Grounded = true;
@@ -163,6 +165,12 @@ public class CharacterController2D : MonoBehaviour
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
+    }
+
+       IEnumerator DelayedAction()
+    {
+    yield return new WaitForSeconds(1f);
+
     }
 }
 

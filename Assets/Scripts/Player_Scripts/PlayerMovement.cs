@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
+            
            if (playerEndurance.CheckEndurance(2))
            {
                 jump = true;
@@ -33,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
                 playerEndurance.DecreaseEndurance(2);
                 animator.SetBool("IsJumping", true);
                 playerEndurance.Is_Performing_Action = false;
+                
            }
         }
 
@@ -65,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+ 
 
     void FixedUpdate ()
     {
@@ -73,3 +76,5 @@ public class PlayerMovement : MonoBehaviour
         
     }
 }
+
+
