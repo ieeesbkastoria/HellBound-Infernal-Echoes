@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 489747718039396143}
   - component: {fileID: 2623082418717690142}
   - component: {fileID: 3591733555314517264}
+  - component: {fileID: 335634918849372877}
   m_Layer: 6
   m_Name: Flying-eye-demon
   m_TagString: Enemy
@@ -272,3 +273,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aiPath: {fileID: 2623082418717690142}
   Scale: 7.301217
+--- !u!114 &335634918849372877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486850071808354681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbbb0d9452f115143b069b1af18f8d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 40
+  health: 0
+  anim: {fileID: 5904759757013892496}
+  rb: {fileID: 251222812118411425}
+  wantDie: 1

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 388023313881406683}
   - component: {fileID: 6591915815982530438}
   - component: {fileID: 5318889833167760826}
+  - component: {fileID: 6371940770959080971}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Untagged
@@ -227,7 +228,7 @@ MonoBehaviour:
   target: {fileID: 0}
   activateDistance: 20
   pathUpdateSeconds: 0.5
-  speed: 4
+  speed: 6
   jumpForce: 30
   nextWaypointDistance: 3
   jumpNodeHeightRequirement: 0
@@ -240,6 +241,7 @@ MonoBehaviour:
   isJumping: 0
   isInAir: 0
   directionLookEnabled: 1
+  RLdirection: 1
   startOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &6591915815982530438
 MonoBehaviour:
@@ -288,3 +290,20 @@ MonoBehaviour:
   LayerToHit:
     serializedVersion: 2
     m_Bits: 0
+--- !u!114 &6371940770959080971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015346449535863673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbbb0d9452f115143b069b1af18f8d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 40
+  health: 0
+  anim: {fileID: 3800218234659532792}
+  rb: {fileID: 9027710415916123828}
+  wantDie: 1

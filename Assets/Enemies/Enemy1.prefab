@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 7148117368981846808}
   - component: {fileID: 4016311028430381998}
   - component: {fileID: 2840912772892418643}
+  - component: {fileID: 3580553992932285802}
   m_Layer: 6
   m_Name: Enemy1
   m_TagString: Enemy
@@ -198,6 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aiPath: {fileID: 9012970484310889853}
+  Scale: 6
 --- !u!114 &9012970484310889853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,4 +309,22 @@ MonoBehaviour:
   target: {fileID: 0}
   activateDistance: 50
   aiPath: {fileID: 9012970484310889853}
+  Enemyai: {fileID: 0}
   NewVector: 7.301217
+--- !u!114 &3580553992932285802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481751301842067734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbbb0d9452f115143b069b1af18f8d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 60
+  health: 0
+  anim: {fileID: 5341182996895222130}
+  rb: {fileID: 8309439184167586216}
+  wantDie: 1

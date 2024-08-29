@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 5447714680744030592}
   - component: {fileID: 7644597535564839167}
   - component: {fileID: 3780448264989806357}
+  - component: {fileID: 8475386365773250138}
   m_Layer: 6
   m_Name: hellbeast
   m_TagString: Enemy
@@ -246,6 +247,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   IsGuided: 0
+--- !u!114 &8475386365773250138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267701485796804916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbbb0d9452f115143b069b1af18f8d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+  health: 0
+  anim: {fileID: 6189669057995762948}
+  rb: {fileID: 7644597535564839167}
+  wantDie: 1
 --- !u!1 &1714842829796398889
 GameObject:
   m_ObjectHideFlags: 0

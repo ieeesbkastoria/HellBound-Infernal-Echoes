@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 5870815917594986444}
   - component: {fileID: 6495212492692732767}
   - component: {fileID: 5538377236326953392}
+  - component: {fileID: 351470301020894469}
   m_Layer: 6
   m_Name: Wizard
   m_TagString: Enemy
@@ -335,6 +336,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   IsGuided: 0
+--- !u!114 &351470301020894469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8958894838327201386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbbb0d9452f115143b069b1af18f8d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 40
+  health: 0
+  anim: {fileID: 1112692604349837004}
+  rb: {fileID: 6495212492692732767}
+  wantDie: 1
 --- !u!1 &8975365009264300513
 GameObject:
   m_ObjectHideFlags: 0

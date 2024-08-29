@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7777788720596017420}
   - component: {fileID: 1019319020443278836}
   - component: {fileID: 8594735940792127272}
+  - component: {fileID: 7500097140709892137}
   m_Layer: 6
   m_Name: soldier enemy
   m_TagString: Enemy
@@ -233,11 +234,13 @@ MonoBehaviour:
   jumpModifier: 3
   jumpCheckOffset: 0.1
   jumpcooldown: 1.4
+  movecooldown: 0
   followEnabled: 1
   jumpEnabled: 1
   isJumping: 0
   isInAir: 0
   directionLookEnabled: 1
+  RLdirection: 1
   startOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &8594735940792127272
 MonoBehaviour:
@@ -264,5 +267,22 @@ MonoBehaviour:
   target: {fileID: 0}
   activateDistance: 25
   aiPath: {fileID: 0}
-  isJumping1: {fileID: 1019319020443278836}
+  Enemyai: {fileID: 1019319020443278836}
   NewVector: 7.301217
+--- !u!114 &7500097140709892137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3126768071602630715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbbb0d9452f115143b069b1af18f8d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 60
+  health: 0
+  anim: {fileID: 7632090284944176120}
+  rb: {fileID: 2658790822961928765}
+  wantDie: 0
