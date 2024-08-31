@@ -23,6 +23,7 @@ public class EnemyAi : MonoBehaviour
     public bool followEnabled = true;
     public bool jumpEnabled = true, isJumping, isInAir;
     public bool directionLookEnabled = true;
+    public bool RLdirection = true;
 
     [SerializeField] Vector3 startOffset;
 
@@ -119,10 +120,12 @@ public class EnemyAi : MonoBehaviour
             if (rb.velocity.x < 0.05f)
             {
                 transform.localScale = new Vector3(-1f * Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                RLdirection = true;
             }
             else if (rb.velocity.x > -0.05f)
             {
                 transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                RLdirection = false;
             }
         }
     }

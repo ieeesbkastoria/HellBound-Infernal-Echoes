@@ -90,7 +90,7 @@ SpriteRenderer:
   m_Size: {x: 0.1, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!58 &5220354655771201648
@@ -305,3 +305,4 @@ MonoBehaviour:
   health: 0
   anim: {fileID: 3306196262420786471}
   rb: {fileID: 4958470596249759892}
+  wantDie: 0
