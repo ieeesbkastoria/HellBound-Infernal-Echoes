@@ -10,17 +10,23 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     
     public float runSpeed = 40f;
+    public bool spin = false;
 
     bool jump = false;
     bool crouch = false;
 
     float horizontalMove = 0f;
+    public int DoNotMinedMe;
 
     // Update is called once per frame
     void Update()
     {
         
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+
+        if (horizontalMove < 0){DoNotMinedMe = 2; spin = true;  Debug.Log("Invert"); }  
+        else if (horizontalMove > 0){DoNotMinedMe = 1; spin = false;} 
+        else DoNotMinedMe = 3;
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 

@@ -9,6 +9,9 @@ TagManager:
   - Logic
   - Win
   - terrain
+  - SpawnPoint
+  - Boss
+  - Rooms
   layers:
   - Default
   - TransparentFX
@@ -43,6 +46,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BackGround
+    uniqueID: 775259513
+    locked: 0
+  - name: ForeGround
+    uniqueID: 3981258649
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: FirstGround
+    uniqueID: 3735487119
     locked: 0
