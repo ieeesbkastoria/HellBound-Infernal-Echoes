@@ -11,4 +11,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI_Menu.unity
     guid: 503717bba190ffa46a18f1ab5a300c83
+  - enabled: 1
+    path: Assets/Procedural Level Creation/Scenes/Layer 1.unity
+    guid: cef596fcd216291478dd8c66832552d5
+  - enabled: 1
+    path: Assets/Procedural Level Creation/Scenes/Layer 2.unity
+    guid: 4b91b46b95b322140b7376321d37506d
+  - enabled: 1
+    path: Assets/Procedural Level Creation/Scenes/Layer 3.unity
+    guid: b6c1c25ef73c8f044ad3390bd1ae2ae1
+  - enabled: 1
+    path: Assets/Procedural Level Creation/Scenes/Layer 4.unity
+    guid: 691506d8aa8b80a4fb73f45f3169c2e0
+  - enabled: 1
+    path: Assets/Procedural Level Creation/Scenes/Layer 5.unity
+    guid: 6d6579ee06ca46e4788b52e53aa7471d
+  - enabled: 1
+    path: Assets/Procedural Level Creation/Scenes/Layer 6.unity
+    guid: 81705bb536848c54e842b95fd37e3f8d
+  - enabled: 1
+    path: Assets/Procedural Level Creation/Scenes/Layer 7.unity
+    guid: a9a2ad4419c924e48b3338f053882278
+  - enabled: 1
+    path: Assets/Procedural Level Creation/Scenes/Layer 8.unity
+    guid: 88fcde4c08f0ff14595092fd48ff5e8c
+  - enabled: 1
+    path: Assets/Procedural Level Creation/Scenes/Layer 9.unity
+    guid: 8a6c72cfc8dcde64e954a631a5ee53b0
   m_configObjects: {}
