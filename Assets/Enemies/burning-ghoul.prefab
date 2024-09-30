@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 523303181614203321}
   - component: {fileID: 2683820272733500712}
   - component: {fileID: 1242622187091095115}
+  - component: {fileID: 7903929861411899867}
   m_Layer: 6
   m_Name: burning-ghoul
   m_TagString: Enemy
@@ -306,3 +307,18 @@ MonoBehaviour:
   anim: {fileID: 7849103647418439932}
   rb: {fileID: 1685445630675260279}
   wantDie: 1
+--- !u!114 &7903929861411899867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2244792110504048897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea610bab00c911428b8cf414dddff76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 3
+  EnemyDeaths: 0
+  currencyOnKill: 10

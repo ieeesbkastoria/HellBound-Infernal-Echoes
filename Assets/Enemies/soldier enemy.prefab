@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1019319020443278836}
   - component: {fileID: 8594735940792127272}
   - component: {fileID: 7500097140709892137}
+  - component: {fileID: -5905177159428622789}
   m_Layer: 6
   m_Name: soldier enemy
   m_TagString: Enemy
@@ -286,3 +287,18 @@ MonoBehaviour:
   anim: {fileID: 7632090284944176120}
   rb: {fileID: 2658790822961928765}
   wantDie: 0
+--- !u!114 &-5905177159428622789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3126768071602630715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea610bab00c911428b8cf414dddff76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 5
+  EnemyDeaths: 0
+  currencyOnKill: 10

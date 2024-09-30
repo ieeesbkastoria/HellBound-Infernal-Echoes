@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4813874954267384166}
   - component: {fileID: 3585702818021422365}
   - component: {fileID: 3664688027086804727}
+  - component: {fileID: -4474351776711027005}
   m_Layer: 6
   m_Name: Enemy Ogre
   m_TagString: Enemy
@@ -286,3 +287,18 @@ MonoBehaviour:
   anim: {fileID: 8564594778376237114}
   rb: {fileID: 2177924148232355748}
   wantDie: 1
+--- !u!114 &-4474351776711027005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5899315614305565457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea610bab00c911428b8cf414dddff76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 15
+  EnemyDeaths: 0
+  currencyOnKill: 10

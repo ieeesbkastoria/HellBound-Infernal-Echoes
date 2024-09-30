@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1773904544942051950}
   - component: {fileID: 357211218628897872}
   - component: {fileID: 4037041503365782473}
+  - component: {fileID: -8344650314462463337}
   m_Layer: 6
   m_Name: hell hound enemy (1)
   m_TagString: Enemy
@@ -286,3 +287,18 @@ MonoBehaviour:
   anim: {fileID: 7197291017240329759}
   rb: {fileID: 8834611142006954380}
   wantDie: 1
+--- !u!114 &-8344650314462463337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7348203402527030837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea610bab00c911428b8cf414dddff76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 3
+  EnemyDeaths: 0
+  currencyOnKill: 10

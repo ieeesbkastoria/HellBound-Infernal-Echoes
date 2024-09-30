@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5673886816383942937}
   - component: {fileID: 3637108223889579192}
   - component: {fileID: 8560577091905359306}
+  - component: {fileID: -3267695496603164275}
   m_Layer: 6
   m_Name: mutant-toad
   m_TagString: Enemy
@@ -286,3 +287,18 @@ MonoBehaviour:
   anim: {fileID: 4876171271025635299}
   rb: {fileID: 4912913473634016791}
   wantDie: 1
+--- !u!114 &-3267695496603164275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7977711500598839668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea610bab00c911428b8cf414dddff76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 7
+  EnemyDeaths: 0
+  currencyOnKill: 10
