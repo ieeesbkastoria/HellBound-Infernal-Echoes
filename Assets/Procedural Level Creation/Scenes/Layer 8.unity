@@ -7988,7 +7988,7 @@ MonoBehaviour:
   - {fileID: 1633850058292698, guid: dfeb1a2cd3a62e64a91a6853ac634c96, type: 3}
   - {fileID: 1709453575458850, guid: 88336c3115d4c9848a3503ad825ffe1b, type: 3}
   - {fileID: 1982205314345556, guid: 7c7e5ac85d86565468507037d8598073, type: 3}
-  closedRoom: {fileID: 1586528034238900, guid: 71addd1db0904154d960002486bf6a2b, type: 3}
+  closedRoom: {fileID: 1586528034238900, guid: dbfe52c1f0d8af042995f23fdc458feb, type: 3}
   rooms: []
   waitTime: 2
   boss: {fileID: 1898445321837384, guid: 5ae9720b79a549d479ac0825829d24ce, type: 3}

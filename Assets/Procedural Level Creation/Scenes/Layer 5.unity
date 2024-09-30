@@ -5345,7 +5345,7 @@ MonoBehaviour:
   - {fileID: 1633850058292698, guid: 24e773968ab8a5d4a8da82854250a7ea, type: 3}
   - {fileID: 1709453575458850, guid: 63ae6aa462efd60499db807c635b6375, type: 3}
   - {fileID: 1982205314345556, guid: 9e2d33693cc15024faf313a72c4a0c3f, type: 3}
-  closedRoom: {fileID: 1586528034238900, guid: 71addd1db0904154d960002486bf6a2b, type: 3}
+  closedRoom: {fileID: 1586528034238900, guid: 3f0781a7db63eb543a2a428b52899185, type: 3}
   rooms: []
   waitTime: 2
   boss: {fileID: 1898445321837384, guid: 5ae9720b79a549d479ac0825829d24ce, type: 3}
