@@ -55,7 +55,7 @@ public class LogicScript : MonoBehaviour
     public void GameVictory()
     {
         gameWinScreen.SetActive(true);
-        EnemyDeathsText.text = "Enemies Slain: " + enemyLogic.EnemyDeaths;
+        //EnemyDeathsText.text = "Enemies Slain: " + enemyLogic.EnemyDeaths;
         StopTimer();
     }
 }

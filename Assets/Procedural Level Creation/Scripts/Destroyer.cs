@@ -7,7 +7,7 @@ public class Destroyer : MonoBehaviour {
  void OnTriggerEnter2D(Collider2D other)
 {
     // Check if the object's name is NOT "Tilemap"
-    if (other.gameObject.name != "Tilemap")
+    if (other.gameObject.name != "Tilemap" && other.gameObject.name != "Player")
     {
         // If the object is not named "Tilemap", destroy it
         Destroy(other.gameObject);

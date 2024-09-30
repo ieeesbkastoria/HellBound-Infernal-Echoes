@@ -516,7 +516,7 @@ Transform:
   m_GameObject: {fileID: 225411651}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.598975, y: 4.004917, z: -10.809999}
+  m_LocalPosition: {x: -5.1633797, y: 4.004917, z: -10.809999}
   m_LocalScale: {x: 1.1607325, y: 5.5728, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -535,6 +535,7 @@ GameObject:
   - component: {fileID: 231227193}
   - component: {fileID: 231227192}
   - component: {fileID: 231227191}
+  - component: {fileID: 231227194}
   m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
@@ -605,7 +606,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 231227192}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 231227194}
+        m_TargetAssemblyTypeName: ContinueButton, Assembly-CSharp
+        m_MethodName: OnContinueButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &231227192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -644,6 +657,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 231227189}
   m_CullTransparentMesh: 1
+--- !u!114 &231227194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231227189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 304d65cf5c088c04488ec7cda963e30e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Layer 3
 --- !u!1 &239054694
 GameObject:
   m_ObjectHideFlags: 0
@@ -5793,7 +5819,6 @@ GameObject:
   - component: {fileID: 1839976094}
   - component: {fileID: 1839976093}
   - component: {fileID: 1839976092}
-  - component: {fileID: 1839976091}
   - component: {fileID: 1839976090}
   - component: {fileID: 1839976089}
   - component: {fileID: 1839976088}
@@ -5972,7 +5997,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.01, y: -0.03}
   serializedVersion: 2
-  m_Radius: 0.08
+  m_Radius: 0.06
 --- !u!114 &1839976086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6082,7 +6107,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_GroundCheck: {fileID: 1218317006}
   m_CeilingCheck: {fileID: 2039511132}
-  m_CrouchDisableCollider: {fileID: 1839976091}
+  m_CrouchDisableCollider: {fileID: 0}
   tr: {fileID: 1839976084}
   rb: {fileID: 1839976090}
   pz: 0
@@ -6134,51 +6159,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &1839976091
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839976082}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.016, y: 0.075}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.19, y: 0.29}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.08, y: 0.15}
-  m_EdgeRadius: 0
 --- !u!114 &1839976092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7132,7 +7112,7 @@ Transform:
   m_GameObject: {fileID: 2105051704}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.598975, y: 4.004917, z: -10.809999}
+  m_LocalPosition: {x: -5.1633797, y: 4.004917, z: -10.809999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

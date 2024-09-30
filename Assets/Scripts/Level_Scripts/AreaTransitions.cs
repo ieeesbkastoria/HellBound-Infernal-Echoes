@@ -17,11 +17,11 @@ public class AreaTransitions : MonoBehaviour
         {
             playerInTrigger = true;  // Player has entered the trigger
             confirmationUI.SetActive(true);  // Show the confirmation UI
-            StartCoroutine(WaitForPlayerInput());  // Start the coroutine to wait for input
+            //StartCoroutine(WaitForPlayerInput());  // Start the coroutine to wait for input
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+  private void OnTriggerExit2D(Collider2D other)
     {
         // Reset the trigger if the player leaves
         if (other.tag == "Player" && !other.isTrigger)
@@ -32,7 +32,7 @@ public class AreaTransitions : MonoBehaviour
     }
 
     // Coroutine to wait for the player to press X
-    IEnumerator WaitForPlayerInput()
+  IEnumerator WaitForPlayerInput()
     {
         // Wait for player input while in the trigger
         while (playerInTrigger)

@@ -77,12 +77,21 @@ public class PlayerLife : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.CompareTag("Win"))
-        {
-            logic.GameVictory();
-            Die();
-        }
     }
+
+    void OnTriggerEnter2D(Collider2D collision)
+{
+    // Check if the collided object has the "Win" tag
+    if (collision.gameObject.CompareTag("Win"))
+    {
+        // Call the GameVictory method in the logic component
+        logic.GameVictory();
+        
+        // Call the Die method (if necessary for the current behavior)
+        Die();
+    }
+}
+
 
     public void TakeDamage(int damage)
     {

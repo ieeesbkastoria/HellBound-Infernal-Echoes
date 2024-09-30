@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 45711587}
   - component: {fileID: 45711586}
   - component: {fileID: 45711585}
+  - component: {fileID: 45711588}
   m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
@@ -205,7 +206,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 45711586}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 45711588}
+        m_TargetAssemblyTypeName: ContinueButton, Assembly-CSharp
+        m_MethodName: OnContinueButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &45711586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,6 +257,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 45711583}
   m_CullTransparentMesh: 1
+--- !u!114 &45711588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45711583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 304d65cf5c088c04488ec7cda963e30e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Layer 2
 --- !u!1 &62652815
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,7 +983,7 @@ Transform:
   m_GameObject: {fileID: 259017939}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.0110254, y: 1.5149174, z: -10.809999}
+  m_LocalPosition: {x: 6.446621, y: 1.5149174, z: -10.809999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2569,7 +2595,6 @@ GameObject:
   - component: {fileID: 803526662}
   - component: {fileID: 803526663}
   - component: {fileID: 803526664}
-  - component: {fileID: 803526666}
   m_Layer: 0
   m_Name: LogicManager
   m_TagString: Logic
@@ -2648,31 +2673,6 @@ MonoBehaviour:
   TimerText: {fileID: 776936976}
   gameWinScreen: {fileID: 825839013}
   enemyLogic: {fileID: 0}
---- !u!114 &803526666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 803526661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aca9c402428fe744b2e74d8fd06117c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gates:
-  - gateObject: {fileID: 0}
-    hitbox: {fileID: 0}
-    trigger: {fileID: 0}
-    doorAnimator: {fileID: 0}
-    isOpen: 0
-  - gateObject: {fileID: 0}
-    hitbox: {fileID: 0}
-    trigger: {fileID: 0}
-    doorAnimator: {fileID: 0}
-    isOpen: 0
-  enemyTag: Enemy
-  playerTag: Player
 --- !u!4 &803526667
 Transform:
   m_ObjectHideFlags: 0
@@ -3302,7 +3302,7 @@ Transform:
   m_GameObject: {fileID: 1131696342}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.0110254, y: 1.5149174, z: -10.809999}
+  m_LocalPosition: {x: 6.446621, y: 1.5149174, z: -10.809999}
   m_LocalScale: {x: 1.1607325, y: 5.5728, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11036,7 +11036,6 @@ GameObject:
   - component: {fileID: 2059466373}
   - component: {fileID: 2059466372}
   - component: {fileID: 2059466371}
-  - component: {fileID: 2059466370}
   - component: {fileID: 2059466369}
   - component: {fileID: 2059466368}
   - component: {fileID: 2059466367}
@@ -11215,7 +11214,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.01, y: -0.03}
   serializedVersion: 2
-  m_Radius: 0.08
+  m_Radius: 0.06
 --- !u!114 &2059466365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11267,7 +11266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef1f44ace3ad45e4c91f9106138b4d73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  logic: {fileID: 0}
+  logic: {fileID: 803526665}
   healings: 3
   maxHealth: 10
   currentHealth: 0
@@ -11325,13 +11324,13 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_GroundCheck: {fileID: 642943617}
   m_CeilingCheck: {fileID: 1915296485}
-  m_CrouchDisableCollider: {fileID: 2059466370}
+  m_CrouchDisableCollider: {fileID: 0}
   tr: {fileID: 2059466363}
   rb: {fileID: 2059466369}
   pz: 0
   canDash: 1
   dashingCooldown: 1
-  m_Grounded: 0
+  m_Grounded: 1
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -11377,51 +11376,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &2059466370
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2059466361}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.016, y: 0.075}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.19, y: 0.29}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.08, y: 0.15}
-  m_EdgeRadius: 0
 --- !u!114 &2059466371
 MonoBehaviour:
   m_ObjectHideFlags: 0
