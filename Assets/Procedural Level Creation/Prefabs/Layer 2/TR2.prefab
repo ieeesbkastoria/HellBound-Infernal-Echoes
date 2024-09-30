@@ -4924,7 +4924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5725064838885231114, guid: afa8012de6894934a9bf1d061b6f8ab7, type: 3}
       propertyPath: scenePathOrName
-      value: Layer 3
+      value: Boss Room1
       objectReference: {fileID: 0}
     - target: {fileID: 6576492022877662092, guid: afa8012de6894934a9bf1d061b6f8ab7, type: 3}
       propertyPath: m_Name
