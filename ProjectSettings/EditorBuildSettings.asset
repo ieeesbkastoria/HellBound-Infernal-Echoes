@@ -12,11 +12,23 @@ EditorBuildSettings:
     path: Assets/Scenes/UI_Menu.unity
     guid: 503717bba190ffa46a18f1ab5a300c83
   - enabled: 1
+    path: Assets/Scenes/Layer 1/Entrance Room.unity
+    guid: 5d129185308612f4d92ba2368c860a93
+  - enabled: 1
+    path: Assets/Scenes/Layer 1/Room 2.unity
+    guid: 27c27f904d5466845a0f89abc590edba
+  - enabled: 1
+    path: Assets/Scenes/Layer 1/Room 3.unity
+    guid: bd061bc8e82a69948bcb45ed573e9c55
+  - enabled: 1
     path: Assets/Procedural Level Creation/Scenes/Layer 1.unity
     guid: cef596fcd216291478dd8c66832552d5
   - enabled: 1
     path: Assets/Procedural Level Creation/Scenes/Layer 2.unity
     guid: 4b91b46b95b322140b7376321d37506d
+  - enabled: 1
+    path: Assets/Scenes/Boss Room1.unity
+    guid: db73edc235d2c0d4c899c5a272c4b73e
   - enabled: 1
     path: Assets/Procedural Level Creation/Scenes/Layer 3.unity
     guid: b6c1c25ef73c8f044ad3390bd1ae2ae1
@@ -30,6 +42,9 @@ EditorBuildSettings:
     path: Assets/Procedural Level Creation/Scenes/Layer 6.unity
     guid: 81705bb536848c54e842b95fd37e3f8d
   - enabled: 1
+    path: Assets/Scenes/Boss Room2.unity
+    guid: 914a980ed34341c45af0cb767d8924a3
+  - enabled: 1
     path: Assets/Procedural Level Creation/Scenes/Layer 7.unity
     guid: a9a2ad4419c924e48b3338f053882278
   - enabled: 1
@@ -39,21 +54,6 @@ EditorBuildSettings:
     path: Assets/Procedural Level Creation/Scenes/Layer 9.unity
     guid: 8a6c72cfc8dcde64e954a631a5ee53b0
   - enabled: 1
-    path: Assets/Scenes/Boss Room1.unity
-    guid: db73edc235d2c0d4c899c5a272c4b73e
-  - enabled: 1
-    path: Assets/Scenes/Boss Room2.unity
-    guid: 914a980ed34341c45af0cb767d8924a3
-  - enabled: 1
     path: Assets/Scenes/Boss Room3.unity
     guid: 26c88beb30d0d9e43ad8668929aa8cc6
-  - enabled: 1
-    path: Assets/Scenes/Layer 1/Entrance Room.unity
-    guid: 5d129185308612f4d92ba2368c860a93
-  - enabled: 1
-    path: Assets/Scenes/Layer 1/Room 2.unity
-    guid: 27c27f904d5466845a0f89abc590edba
-  - enabled: 1
-    path: Assets/Scenes/Layer 1/Room 3.unity
-    guid: bd061bc8e82a69948bcb45ed573e9c55
   m_configObjects: {}
