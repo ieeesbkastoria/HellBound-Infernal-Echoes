@@ -7,7 +7,7 @@ public class StartButton : MonoBehaviour
     public void StartGame()
     {
         // Load the "Main" scene
-        SceneManager.LoadScene("Layer 1");
+        SceneManager.LoadScene("Entrance Room");
     }
 }
 
