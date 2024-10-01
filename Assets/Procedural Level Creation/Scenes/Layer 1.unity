@@ -2682,6 +2682,11 @@ MonoBehaviour:
   TimerText: {fileID: 776936976}
   gameWinScreen: {fileID: 825839013}
   enemyLogic: {fileID: 0}
+  persistentObjects:
+  - {fileID: 664045465}
+  - {fileID: 803526661}
+  - {fileID: 2059466361}
+  - {fileID: 259017939}
 --- !u!4 &803526667
 Transform:
   m_ObjectHideFlags: 0
