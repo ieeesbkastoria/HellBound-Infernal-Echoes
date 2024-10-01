@@ -61,7 +61,7 @@ public class PlayerCurrency : MonoBehaviour
     {
         if (currencyText != null)
         {
-            currencyText.text = "Currency: " + playerCurrency;
+            currencyText.text = "Echoes: " + playerCurrency;
         }
     }
 }
