@@ -274,6 +274,7 @@ MonoBehaviour:
   - {fileID: 803526661}
   - {fileID: 259017939}
   - {fileID: 2059466361}
+  - {fileID: 500189109}
   winScreen: {fileID: 825839013}
   player: {fileID: 2059466361}
   xCoordinate: 12
@@ -992,7 +993,7 @@ Transform:
   m_GameObject: {fileID: 259017939}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.224724, y: 1.2249174, z: -10}
+  m_LocalPosition: {x: 9.222202, y: 1.2249174, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1109,7 +1110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAQIeyCe1FfgAIAAEQFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzoWxARPTW+sQ0gMJE9rJxRfFXmMNsuTRBx/J8N+7km3sUi7Ib/et3r5d+4swoWvIjFRrxfKNzIF8HxF3Jt9GffAZznQvxY59QpfzznJTuiTqc96oYRLx0NG0rMAolv0Qe+6SAwStYIVU1SrfQyK10QgXlGvAkJLGsQVCXyNyxr/x0lEueJo+uNMnnpbB6IrHDIQBNUiNJssAf4vpsqWMw0nokGAWt9R4Mo+ieRSvxuHMF7Ei47SqIXcd9bXm84Y5nXW3TyexA8LQ0wT23jKCicvJJOdMt9KJudTemoTW2mLjmJAzilZ4vaFnlMD2pXGlh/TXotBgWqcUvTwyhZ42dclP2RhdUX1otB4pt+6mxdzLampu/guPG9WFktVzdy32h5ApWXZ4o5eMajMYxBB+HCj3jp0oP9APDu8liBe5VtKKHINGWUe1GqaP/eOts6SE7NDjjdQ70Nb9CLq5d1N3PVx98+eEs+rDWz9vgB2X3nC/LKBwOL9QsF8l3ZZA1Kn4o+E33Q93rg08MaUNhtouhZP3Ia1yqWTlPXPdWJNIJcDDregaBOXmssUy5n6Cd7HBtXeRJ+rervbyNta9NHcUD/f5QXAX2srTbVi6lKcN6PLVGs4E9KJd4AV9SqQQzYINPeloO6sKmg1oe8vyf1eLFOEsWkTBdBEHyxgPY4hoEc+CeJnTh+gBMuJ3jwnsk/JtI7S1B6cm+uIC96z76IzWitZ+2XNFT2v2WcmB5UwUcpcpAPHaVLgJB4WX4IuZr3KGBu3AGCb8vMlXSrjMDpCnt0Kp73R1NoqmfZWU1OwojUNSkvivTEocfNvlrYIjg5O7vCt2Jde/UEsDBBQAAAgIAAAQIexHcp+obAAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrRSmqGxqZmpgZGZhYGlBZChm2qamGZhbGBhmZJobmqemqwUC1RfUlmQ6peYmwrRE5BYkpGWmZeSmZeu516UmeIOMlopthYAUEsBAi0AFAAACAgAABAh7IJ7UV+AAgAARAUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAABAh7Edyn6hsAAAAeAAAAAkAJAAAAAAAAAAAAAAAzQIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAACEAwAAAAA=
+    dataString: UEsDBBQAAAgIAAAQIewBegSnWwIAABUFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VEtz2jAQ/iuMzk3GkBCgt9YhpAcCE9LJxRdhrbEGWfLowSvDf+9KtrHrTk8s3367++1D/iJcmhJSq/RCc7ZUDMj3AfE2+TZona9wojslN/wCDeeTM5t7Eg2cd2q5Qnzow4wqwGqe/pA74ckRgk7yTOliznYQK2MNwhkVBtCllfXREqGvATnhz93Mh5zRGk28dUFrFg2uaKYgLeiW2hAbWsVyMhW0KIF5yS15HDV0tAJRYjs1x0tPlRDc1FqIPZeh15iWxmEnSGCcYm9BwPD+AYEc+C63Xmk3fJVlBmwtS9PzM9c4pCov+amqyRXU7CttByqcr/T0GERVOZf/uO+GwZ1pVbw2ZYehJZvzdP9Ozyk1tjPZLvzcUR4mdKRiT7cCPnOQb2qhlZMMnVY7H+oMjJ7bv7fO4hzSfYtXUnugK/+/H9/DNTR/igUvtt51/1gBG6HCwMP2QeNqfqHgcBumToGoV/HbwAfddY+odrxwbSy66i6ll7dVTnsqmYeZ+W6cjZWWEOBadAmSCnteYxrb32DP1ynb87xQ/1zq4rWveQW9kAC3/CjqudbqeFuWydVxCSZfOSu4hFa0d7zhnGIlZXVg3Zk0YRunM5p2wnaOs79Pi2TDh/HTOBo9TaPZFI07GNNs+hBNZ4xOxhNISbg9LrFPKtaV0Ho8uDXZJpd4Z81XZLDQtAzHzjQ9LvilUJ2Rc5mpTaoB5KrKcBMOGovgs2RzxnFAG7CWy7Bv8pUQodI9sOSWKAmdzk9W06TNkpCSH5T1SELi8NlIiIdvt7zWcOBw9MWbZFdy/QNQSwMEFAAACAgAABAh7Edyn6hsAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tFKaobGpmamBkZmFgaUFkKGbapqYZmFsYGGZkmhuap6arBQLVF9SWZDql5ibCtETkFiSkZaZl5KZl67nXpSZ4g4yWim2FgBQSwECLQAUAAAICAAAECHsAXoEp1sCAAAVBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAECHsR3KfqGwAAAB4AAAACQAkAAAAAAAAAAAAAACoAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAF8DAAAAAA==
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -1190,8 +1191,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500189109}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.040197, y: -1.5816201, z: -4.38492}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.040197, y: -1.5816202, z: -4.3849196}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2682,11 +2683,6 @@ MonoBehaviour:
   TimerText: {fileID: 776936976}
   gameWinScreen: {fileID: 825839013}
   enemyLogic: {fileID: 0}
-  persistentObjects:
-  - {fileID: 664045465}
-  - {fileID: 803526661}
-  - {fileID: 2059466361}
-  - {fileID: 259017939}
 --- !u!4 &803526667
 Transform:
   m_ObjectHideFlags: 0
@@ -3316,7 +3312,7 @@ Transform:
   m_GameObject: {fileID: 1131696342}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.224724, y: 1.2249174, z: -10}
+  m_LocalPosition: {x: 9.222202, y: 1.2249174, z: -10}
   m_LocalScale: {x: 1.1607325, y: 5.5728, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12015,7 +12011,7 @@ SceneRoots:
   - {fileID: 259017941}
   - {fileID: 1131696346}
   - {fileID: 803526667}
-  - {fileID: 500189111}
   - {fileID: 664045466}
+  - {fileID: 500189111}
   - {fileID: 2059466374}
   - {fileID: 1666935986}

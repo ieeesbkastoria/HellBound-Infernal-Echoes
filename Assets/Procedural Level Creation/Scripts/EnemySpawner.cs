@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -11,10 +12,14 @@ public class EnemySpawner : MonoBehaviour
     public float spawnDelay = 0.5f; // Time delay before spawning enemies
     public List<Transform> spawnPoints; // Spawn points in the room (empty game objects in your room where enemies can spawn)
 
+    private GameObject player; // Reference to the player GameObject
     private bool enemiesSpawned = false; // To prevent multiple spawns
 
     void Start()
     {
+        // Automatically find the player by tag
+        player = GameObject.FindWithTag("Player");
+
         // Start spawning enemies after a small delay
         Invoke("SpawnEnemies", spawnDelay);
     }
@@ -36,7 +41,21 @@ public class EnemySpawner : MonoBehaviour
                     GameObject enemyToSpawn = enemies[Random.Range(0, enemies.Length)];
 
                     // Instantiate the enemy at the spawn point
-                    Instantiate(enemyToSpawn, spawnPoint.position, Quaternion.identity);
+                    GameObject enemyInstance = Instantiate(enemyToSpawn, spawnPoint.position, Quaternion.identity);
+
+                    // Assign the player to the Field target of the AIDestinationSetter on the enemy
+                    AIDestinationSetter aiDestinationSetter = enemyInstance.GetComponent<AIDestinationSetter>();
+                    if (aiDestinationSetter != null && player != null)
+                    {
+                        aiDestinationSetter.target = player.transform; // Assign the player's transform to the target
+                    }
+
+                    // Check for the EnemyAI component and assign the player as the target if it exists
+                    EnemyAi enemyAI = enemyInstance.GetComponent<EnemyAi>();
+                    if (enemyAI != null && player != null)
+                    {
+                        enemyAI.target = player.transform; // Assuming 'target' is a public GameObject field in EnemyAI
+                    }
                 }
             }
 
@@ -44,3 +63,5 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 }
+
+

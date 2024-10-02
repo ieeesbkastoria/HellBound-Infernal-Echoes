@@ -5,11 +5,11 @@ using UnityEngine;
 public class Boss_Health : MonoBehaviour
 {
     [SerializeField] private bool IsEnranged = false;
-
+    
     public bool StageOne = true;
     public int maxHealth = 100;
-	public int health;
-    public  BossHealthBar healthBar;
+    public int health;
+    public BossHealthBar healthBar;
     public Animator anim;
 
     private void Awake()
@@ -17,28 +17,29 @@ public class Boss_Health : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    void Start ()
+    void Start()
     {
         health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
 
-    void Update ()
+    void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            TakeDamage(10);
-        }
-
+        // Debug for testing purposes
+        // if (Input.GetKeyDown(KeyCode.Y))
+        // {
+        //     TakeDamage(10);
+        // }
     }
-	public bool isInvulnerable = false;
 
-	public void TakeDamage(int damage)
-	{
-		if (isInvulnerable)
-			return;
+    public bool isInvulnerable = false;
 
-		health -= damage;
+    public void TakeDamage(int damage)
+    {
+        if (isInvulnerable)
+            return;
+
+        health -= damage;
         healthBar.SetHealth(health);
 
         if (IsEnranged && health <= 50)
@@ -47,16 +48,16 @@ public class Boss_Health : MonoBehaviour
             StageOne = false;
         }
 
-		if (health <= 0)
-		{
+        if (health <= 0)
+        {
             healthBar.SetHealth(0);
             anim.SetTrigger("Exit");
-		}
-	}
+            Die();
+        }
+    }
 
-	void Die()
-	{
-		Destroy(gameObject);
-	}
-
+    void Die()
+    {
+        Destroy(gameObject);
+    }
 }

@@ -83702,7 +83702,7 @@ GameObject:
   - component: {fileID: 261720816}
   - component: {fileID: 261720817}
   - component: {fileID: 261720818}
-  - component: {fileID: 261720820}
+  - component: {fileID: 261720822}
   m_Layer: 0
   m_Name: LogicManager
   m_TagString: Logic
@@ -83781,31 +83781,6 @@ MonoBehaviour:
   TimerText: {fileID: 1476266377}
   gameWinScreen: {fileID: 1923852324}
   enemyLogic: {fileID: 0}
---- !u!114 &261720820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 261720815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aca9c402428fe744b2e74d8fd06117c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gates:
-  - gateObject: {fileID: 0}
-    hitbox: {fileID: 0}
-    trigger: {fileID: 0}
-    doorAnimator: {fileID: 0}
-    isOpen: 0
-  - gateObject: {fileID: 0}
-    hitbox: {fileID: 0}
-    trigger: {fileID: 0}
-    doorAnimator: {fileID: 0}
-    isOpen: 0
-  enemyTag: Enemy
-  playerTag: Player
 --- !u!4 &261720821
 Transform:
   m_ObjectHideFlags: 0
@@ -83821,6 +83796,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &261720822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261720815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f592f425c5aab6c439fedcdeb524c1c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 733786497}
 --- !u!1 &281890110
 GameObject:
   m_ObjectHideFlags: 0
@@ -84553,7 +84541,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.285276, y: 4.004917, z: -10.809999}
+  m_LocalPosition: {x: -19.287798, y: 4.004917, z: -10.809999}
   m_LocalScale: {x: 1.1607325, y: 5.5728, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -127827,7 +127815,7 @@ Transform:
   m_GameObject: {fileID: 1164714030}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.285276, y: 4.004917, z: -10.809999}
+  m_LocalPosition: {x: -19.287798, y: 4.004917, z: -10.809999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -131544,6 +131532,10 @@ PrefabInstance:
     - target: {fileID: 5385151768375220591, guid: e8313d5b2a3191343b5385685c1f0324, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5385151768375220591, guid: e8313d5b2a3191343b5385685c1f0324, type: 3}
+      propertyPath: m_TagString
+      value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 5626339872823262423, guid: e8313d5b2a3191343b5385685c1f0324, type: 3}
       propertyPath: target

@@ -5,7 +5,7 @@ public class PlayerAttack : MonoBehaviour
     private Animator anim;
     public Transform attackLocation;
     public LayerMask enemies;
-
+    
     // Variables for attack parameters
     public float baseAttackRange = 1.5f;
     public int baseDamageAmount = 1;
@@ -34,12 +34,12 @@ public class PlayerAttack : MonoBehaviour
         if (Time.time >= nextAttackTime)
         {
             if (Input.GetKeyDown(KeyCode.F))
-            {  
+            {
                 if (playerEndurance.CheckEndurance(1))
                 {
                     playerEndurance.Is_Performing_Action = true;
                     playerEndurance.DecreaseEndurance(1);
-                    Attack();  
+                    Attack();
                     playerEndurance.Is_Performing_Action = false;
                     nextAttackTime = Time.time + attackCooldown;
                 }
@@ -55,14 +55,24 @@ public class PlayerAttack : MonoBehaviour
         Collider2D[] damageColliders = Physics2D.OverlapCircleAll(attackLocation.position, attackRange, enemies);
         foreach (Collider2D collider in damageColliders)
         {
-            EnemyLogic enemyLogic = collider.GetComponent<EnemyLogic>();
-            if (enemyLogic != null)
+            // Check if the collider is a boss and deal damage
+            Boss_Health bossHealth = collider.GetComponent<Boss_Health>();
+            if (bossHealth != null)
             {
-                enemyLogic.TakeDamage(damageAmount);
-                Debug.Log("Damage Dealt");
+                bossHealth.TakeDamage(damageAmount);
+                Debug.Log("Damage Dealt to Boss");
+            }
+            else
+            {
+                // If it's not the boss, check if it's another enemy
+                EnemyLogic enemyLogic = collider.GetComponent<EnemyLogic>();
+                if (enemyLogic != null)
+                {
+                    enemyLogic.TakeDamage(damageAmount);
+                    Debug.Log("Damage Dealt to Enemy");
+                }
             }
         }
-       
     }
 
     private void OnDrawGizmosSelected()
@@ -79,15 +89,14 @@ public class PlayerAttack : MonoBehaviour
 
     public void SetAttackDamage(int newDamageAmount)
     {
-        damageAmount = newDamageAmount;     
+        damageAmount = newDamageAmount;
     }
 
     public void SetAttackSpeed(float newAttackCooldown)
     {
         attackCooldown = newAttackCooldown;
     }
-
-
 }
+
 
 

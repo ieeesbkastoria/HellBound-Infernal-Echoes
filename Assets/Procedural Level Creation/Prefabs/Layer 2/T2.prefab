@@ -148,6 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 1486850071808354681, guid: 39a02f44b70a43540ac9007025894804, type: 3}
+  - {fileID: 7348203402527030837, guid: 5133692a0f812ab428216cded4efbf15, type: 3}
   enemyCountMin: 1
   enemyCountMax: 5
   spawnDelay: 0.5

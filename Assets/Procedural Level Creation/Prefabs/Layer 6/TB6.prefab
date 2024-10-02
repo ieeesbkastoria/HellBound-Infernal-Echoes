@@ -878,7 +878,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f127661980da44c4e9a71c77480c4701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies: []
+  enemies:
+  - {fileID: 1486850071808354681, guid: 39a02f44b70a43540ac9007025894804, type: 3}
+  - {fileID: 7348203402527030837, guid: 5133692a0f812ab428216cded4efbf15, type: 3}
+  - {fileID: 5899315614305565457, guid: 4575714d768db6a48b9c84b70eac71c4, type: 3}
+  - {fileID: 7977711500598839668, guid: 99067bd9fa00a3e429b297a28c2f3a12, type: 3}
+  - {fileID: 2244792110504048897, guid: 67fb2089375dcd546842df3447bea977, type: 3}
+  - {fileID: 1714842829796398889, guid: cbe069326a863224791f44d7095eaa6a, type: 3}
   enemyCountMin: 1
   enemyCountMax: 5
   spawnDelay: 0.5
