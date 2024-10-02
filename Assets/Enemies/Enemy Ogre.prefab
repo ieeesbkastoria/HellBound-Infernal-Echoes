@@ -299,6 +299,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea610bab00c911428b8cf414dddff76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 15
-  EnemyDeaths: 0
+  startingHealth: 1
   currencyOnKill: 10

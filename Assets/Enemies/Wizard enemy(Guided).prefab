@@ -317,7 +317,7 @@ GameObject:
   - component: {fileID: 1128491291853268873}
   m_Layer: 0
   m_Name: Wizard enemy(Guided)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -351,7 +351,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 2
-  EnemyDeaths: 0
   currencyOnKill: 10
 --- !u!1 &8397749713228624500
 GameObject:

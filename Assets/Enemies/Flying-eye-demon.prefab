@@ -304,5 +304,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 1
-  EnemyDeaths: 0
   currencyOnKill: 10
