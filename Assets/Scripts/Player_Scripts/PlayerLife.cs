@@ -9,6 +9,7 @@ public class PlayerLife : MonoBehaviour
     Vector2 CheckPointPosition;
     public LogicScript logic;
     private Rigidbody2D rb;
+    private PlayerMovement movement;
 
     // Define player's health points
     public int healings = 3;
@@ -39,6 +40,7 @@ public class PlayerLife : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        movement = GetComponent<PlayerMovement>();
     }
 
     void Start()
@@ -133,7 +135,8 @@ public class PlayerLife : MonoBehaviour
         currentHealth = maxHealth;
         SetMaxHealth(maxHealth);
 
-        transform.localScale = new Vector3(10, 10, 2);
+        if(movement.spin == true){transform.localScale = new Vector3(-10, 10, 2);}
+        else transform.localScale = new Vector3(10, 10, 2);
         rb.bodyType = RigidbodyType2D.Dynamic;
     }
 
