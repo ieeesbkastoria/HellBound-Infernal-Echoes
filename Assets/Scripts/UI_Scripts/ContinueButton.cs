@@ -68,6 +68,17 @@ public class ContinueButton : MonoBehaviour
         {
             // Move the player to the specified coordinates
             player.transform.position = new Vector3(xCoordinate, yCoordinate, zCoordinate);
+
+            // Reset the healing count on the player
+            PlayerLife playerLife = player.GetComponent<PlayerLife>();
+            if (playerLife != null)
+            {
+                playerLife.healings = 3; // Reset healing count to 3
+            }
+            else
+            {
+                Debug.LogError("PlayerLife component not found on the player!");
+            }
         }
         else
         {
@@ -78,6 +89,7 @@ public class ContinueButton : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
+
 
 
 
