@@ -12,7 +12,7 @@ public class ContinueButton : MonoBehaviour
     // Reference to the player object
     [SerializeField] private GameObject player;
 
-    // Coordinates for player positioning in the new scene
+    // Coordinates for player positioning if no spawn point is found
     [SerializeField] private float xCoordinate;
     [SerializeField] private float yCoordinate;
     [SerializeField] private float zCoordinate;
@@ -66,8 +66,20 @@ public class ContinueButton : MonoBehaviour
     {
         if (player != null)
         {
-            // Move the player to the specified coordinates
-            player.transform.position = new Vector3(xCoordinate, yCoordinate, zCoordinate);
+            // Try to find a GameObject with the tag "SpawnPoint" in the scene
+            GameObject spawnPoint = GameObject.FindWithTag("PlayerSpawnPoint");
+
+            if (spawnPoint != null)
+            {
+                // If a spawn point exists, move the player to its position
+                Debug.Log("Spawn point found");
+                player.transform.position = spawnPoint.transform.position;
+            }
+            else
+            {
+                // If no spawn point is found, move the player to the specified coordinates
+                player.transform.position = new Vector3(xCoordinate,yCoordinate, zCoordinate);
+            }
 
             // Reset the healing count on the player
             PlayerLife playerLife = player.GetComponent<PlayerLife>();
@@ -89,6 +101,8 @@ public class ContinueButton : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
+
+
 
 
 
