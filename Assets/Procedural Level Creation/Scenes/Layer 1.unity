@@ -649,7 +649,7 @@ GameObject:
   - component: {fileID: 192371146}
   - component: {fileID: 192371145}
   m_Layer: 5
-  m_Name: Options
+  m_Name: Respawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -719,9 +719,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 0cf7ddd5d99239a4b9f0acf3215b388c, type: 3}
+      - m_Target: {fileID: 803526665}
         m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: restartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -992,7 +992,7 @@ Transform:
   m_GameObject: {fileID: 259017939}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.944307, y: -1.4499998, z: -10}
+  m_LocalPosition: {x: 10.95534, y: -1.4499998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3311,7 +3311,7 @@ Transform:
   m_GameObject: {fileID: 1131696342}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.944307, y: -1.4499998, z: -10}
+  m_LocalPosition: {x: 10.95534, y: -1.4499998, z: -10}
   m_LocalScale: {x: 1.1607325, y: 5.5728, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
