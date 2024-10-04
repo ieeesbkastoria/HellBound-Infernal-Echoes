@@ -719,8 +719,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 803526665}
-        m_TargetAssemblyTypeName: LogicScript, Assembly-CSharp
+      - m_Target: {fileID: 803526662}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: restartGame
         m_Mode: 1
         m_Arguments:
@@ -966,7 +966,7 @@ MonoBehaviour:
   m_Follow: {fileID: 2059466374}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 7.5
+    OrthographicSize: 8
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -992,7 +992,7 @@ Transform:
   m_GameObject: {fileID: 259017939}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.95534, y: -1.4499998, z: -10}
+  m_LocalPosition: {x: 10.865696, y: -1.2799997, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3286,7 +3286,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.5
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3311,7 +3311,7 @@ Transform:
   m_GameObject: {fileID: 1131696342}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.95534, y: -1.4499998, z: -10}
+  m_LocalPosition: {x: 10.865696, y: -1.2799997, z: -10}
   m_LocalScale: {x: 1.1607325, y: 5.5728, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10510,7 +10510,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Options
+  m_Text: Respawn
 --- !u!222 &1828997544
 CanvasRenderer:
   m_ObjectHideFlags: 0

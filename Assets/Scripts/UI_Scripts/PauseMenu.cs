@@ -77,4 +77,14 @@ public class PauseMenu : MonoBehaviour
         blackoutPanel.SetActive(true); // Activate the opaque black panel
         isPaused = true;
     }
+
+    public void restartGame()
+    {
+        // Reset the time scale to ensure the game runs normally after restart
+        Time.timeScale = 1f;
+
+        // Reload the current active scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }
+
