@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
-    Vector2 CheckPointPosition;
+    Vector2 CheckPointPosition;  // Stores the last checkpoint or start position
     public LogicScript logic;
     private Rigidbody2D rb;
     private PlayerMovement movement;
@@ -27,7 +27,7 @@ public class PlayerLife : MonoBehaviour
         slider.maxValue = health;
         slider.value = health;
 
-       fill.color = gradient.Evaluate(1f);
+        fill.color = gradient.Evaluate(1f);
     }
 
     public void SetHealth(int health)
@@ -36,7 +36,7 @@ public class PlayerLife : MonoBehaviour
 
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
-   
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -45,7 +45,7 @@ public class PlayerLife : MonoBehaviour
 
     void Start()
     {
-        CheckPointPosition = transform.position;
+        CheckPointPosition = transform.position;  // Set initial checkpoint to player's starting position
         rb = GetComponent<Rigidbody2D>();
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
         currentHealth = maxHealth;
@@ -62,7 +62,9 @@ public class PlayerLife : MonoBehaviour
         if (collision.gameObject.CompareTag("Trap") || collision.gameObject.CompareTag("Enemy"))
         {
             if (collision.gameObject.CompareTag("Enemy"))
-            {Debug.Log("Enemy Hit");}
+            {
+                Debug.Log("Enemy Hit");
+            }
             // Deduct health points when colliding with traps or enemies
             currentHealth--;
             SetHealth(currentHealth);
@@ -78,81 +80,103 @@ public class PlayerLife : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
-
     }
 
     void OnTriggerEnter2D(Collider2D collision)
-{
-    // Check if the collided object has the "Win" tag
-    if (collision.gameObject.CompareTag("Win"))
     {
-        // Call the GameVictory method in the logic component
-        logic.GameVictory();
-        
-        // Call the Die method (if necessary for the current behavior)
-        Die();
-    }
-}
+        // Check if the collided object has the "Win" tag
+        if (collision.gameObject.CompareTag("Win"))
+        {
+            // Call the GameVictory method in the logic component
+            logic.GameVictory();
 
+            // Call the Die method (if necessary for the current behavior)
+            Die();
+        }
+    }
 
     public void TakeDamage(int damage)
     {
         currentHealth--;
         SetHealth(currentHealth);
 
-       
-
         if (currentHealth <= 0)
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-        
+        {
+            Die();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
-       public void Healing()
+    public void Healing()
     {
-            if(healings <= 3 && healings > 0)
+        if (healings <= 3 && healings > 0)
         {
-            if(currentHealth > 0 && currentHealth != 3)
+            if (currentHealth > 0 && currentHealth != maxHealth)
             {
                 Debug.Log("Healed");
                 healings--;
                 currentHealth++;
                 SetHealth(currentHealth);
-            }  
+            }
         }
-    } 
+    }
 
-     IEnumerator Respawn(float duration)
+    // Modified Respawn function to check for PlayerSpawnPoint
+    IEnumerator Respawn(float duration)
     {
-        rb.velocity = new Vector2(0, 0);
+        rb.velocity = Vector2.zero;
         transform.localScale = new Vector3(0, 0, 0);
 
         yield return new WaitForSeconds(duration);
-        transform.position = CheckPointPosition;
 
-        //Health
+        // Check if a spawn point with the tag "PlayerSpawnPoint" exists in the scene
+        GameObject spawnPoint = GameObject.FindWithTag("PlayerSpawnPoint");
+
+        if (spawnPoint != null)
+        {
+            // If a spawn point exists, respawn the player at its position
+            Debug.Log("Player respawned at PlayerSpawnPoint.");
+            transform.position = spawnPoint.transform.position;
+        }
+        else
+        {
+            // If no spawn point exists, respawn at the last checkpoint
+            Debug.Log("No PlayerSpawnPoint found. Respawning at last checkpoint.");
+            transform.position = CheckPointPosition;
+        }
+
+        // Restore health to maximum
         currentHealth = maxHealth;
         SetMaxHealth(maxHealth);
+        
+        // Restore healings to full
+        healings = 3;
 
-        if(movement.spin == true){transform.localScale = new Vector3(-10, 10, 2);}
-        else transform.localScale = new Vector3(10, 10, 2);
-        rb.bodyType = RigidbodyType2D.Dynamic;
+        // Restore player visibility
+        if (movement.spin == true)
+        {
+            transform.localScale = new Vector3(-10, 10, 2);
+        }
+        else
+        {
+            transform.localScale = new Vector3(10, 10, 2);
+        }
+
+        rb.bodyType = RigidbodyType2D.Dynamic;  // Make the player dynamic again
     }
 
     public void UpdateCheckpoint(Vector2 pos)
     {
+        // Update the checkpoint position
         CheckPointPosition = pos;
-
     }
- 
 
     public void Die()
     {
-        rb.bodyType = RigidbodyType2D.Static;
-        StartCoroutine(Respawn(0.5f));
+        rb.bodyType = RigidbodyType2D.Static;  // Make the player static during respawn
+        StartCoroutine(Respawn(0.5f));  // Start the respawn process with a slight delay
     }
-    
 }
+
 
 
