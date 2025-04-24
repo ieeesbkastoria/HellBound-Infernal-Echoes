@@ -1,6 +1,10 @@
 # HellBound: Infernal Echoes   
 **Explore the Nine Circles of Hell in a Unique Procedural 2D Platformer**
 
+Available Translations:
+- 🇬🇧 [English (This file)](README.md)
+- 🇬🇷 [Greek - Ελληνικά](README_GR.md)
+
 ##  Overview
 
 *HellBound: Infernal Echoes* is a 2D action platformer inspired by *Dante’s Inferno*, where players descend through the 9 Circles of Hell. With **procedurally generated levels and enemies**, every run offers a new challenge and experience.
