@@ -63,3 +63,10 @@ Developed by two members of **IEEE SB Kastoria**’s Game Development group:
 
 - [Nikolaos Svarnas](https://github.com/Svarnik0)
 - [Georgios Boukouvalas](https://github.com/georgeboukoubalas)
+
+---
+
+## How to play
+
+Follow the link below going on Game Jolt platform to download our game, thank you a lot!!!
+https://gamejolt.com/games/HellBound/930130
