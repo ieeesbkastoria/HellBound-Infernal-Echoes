@@ -59,3 +59,10 @@
 
 - [Νικόλαος Σβάρνας](https://github.com/Svarnik0)
 - [Γεώργιος Μπουκουβάλας](https://github.com/georgeboukoubalas)
+
+---
+
+## Πως να παίξεις:
+
+Ακολούθησε τον παρακάτω σύνδεσμο στο Game Jolt για να κατεβάσεις το παιχνίδι μας, σε ευχαρηστούμε πολύ!!!
+https://gamejolt.com/games/HellBound/930130
